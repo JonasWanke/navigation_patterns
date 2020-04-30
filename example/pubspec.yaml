@@ -1,0 +1,20 @@
+name: navigation_patterns_example
+description: "Example for 🗺 navigation_patterns, a package implementing common reusable patterns for handling navigation in a complex app"
+version: 0.0.1
+
+environment:
+  sdk: ">=2.3.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  navigation_patterns:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
