@@ -15,14 +15,11 @@ typedef TabSelectionCallback = void Function(int tabIndex);
 
 class BottomNavigationPattern extends StatefulWidget {
   const BottomNavigationPattern({
-    Key key,
-    @required this.tabCount,
-    @required this.navigatorBuilder,
-    @required this.scaffoldBuilder,
-  })  : assert(tabCount != null),
-        assert(tabCount > 0),
-        assert(navigatorBuilder != null),
-        assert(scaffoldBuilder != null),
+    Key? key,
+    required this.tabCount,
+    required this.navigatorBuilder,
+    required this.scaffoldBuilder,
+  })   : assert(tabCount > 0),
         super(key: key);
 
   final int tabCount;
@@ -35,14 +32,14 @@ class BottomNavigationPattern extends StatefulWidget {
 
 class BottomNavigationPatternState extends State<BottomNavigationPattern>
     with TickerProviderStateMixin {
-  List<AnimationController> _faders;
+  late final List<AnimationController> _faders;
 
   var _selectedTabIndex = 0;
 
-  List<GlobalKey<NavigatorState>> _navigatorKeys;
+  late final List<GlobalKey<NavigatorState>> _navigatorKeys;
   List<GlobalKey<NavigatorState>> get navigatorKeys => _navigatorKeys;
   NavigatorState get currentNavigator =>
-      navigatorKeys[_selectedTabIndex].currentState;
+      navigatorKeys[_selectedTabIndex].currentState!;
 
   void selectTab(int index, {bool popIfAlreadySelected = false}) {
     assert(0 <= index && index < widget.tabCount);
@@ -126,18 +123,13 @@ class BottomNavigationPatternState extends State<BottomNavigationPattern>
 
 class _TabContent extends StatefulWidget {
   const _TabContent({
-    Key key,
-    @required this.tabIndex,
-    @required this.navigatorKey,
-    @required this.navigatorBuilder,
-    @required this.fader,
-    @required this.isActive,
-  })  : assert(tabIndex != null),
-        assert(tabIndex >= 0),
-        assert(navigatorKey != null),
-        assert(navigatorBuilder != null),
-        assert(fader != null),
-        assert(isActive != null),
+    Key? key,
+    required this.tabIndex,
+    required this.navigatorKey,
+    required this.navigatorBuilder,
+    required this.fader,
+    required this.isActive,
+  })   : assert(tabIndex >= 0),
         super(key: key);
 
   final int tabIndex;
@@ -151,7 +143,7 @@ class _TabContent extends StatefulWidget {
 }
 
 class _TabContentState extends State<_TabContent> {
-  Widget _child;
+  Widget? _child;
 
   @override
   Widget build(BuildContext context) {
@@ -175,6 +167,6 @@ class _TabContentState extends State<_TabContent> {
     );
 
     widget.fader.forward();
-    return _child;
+    return _child!;
   }
 }
