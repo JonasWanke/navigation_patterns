@@ -4,7 +4,8 @@ version: 0.0.1
 homepage: https://github.com/JonasWanke/navigation_patterns
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.19.0 <3.0.0'
+  flutter: '>=3.7.0 <3.8.0'
 
 dependencies:
   black_hole_flutter: ^0.3.0

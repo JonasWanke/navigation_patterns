@@ -15,12 +15,11 @@ typedef TabSelectionCallback = void Function(int tabIndex);
 
 class BottomNavigationPattern extends StatefulWidget {
   const BottomNavigationPattern({
-    Key? key,
+    super.key,
     required this.tabCount,
     required this.navigatorBuilder,
     required this.scaffoldBuilder,
-  })  : assert(tabCount > 0),
-        super(key: key);
+  }) : assert(tabCount > 0);
 
   final int tabCount;
   final TabNavigatorBuilder navigatorBuilder;
@@ -123,14 +122,12 @@ class BottomNavigationPatternState extends State<BottomNavigationPattern>
 
 class _TabContent extends StatefulWidget {
   const _TabContent({
-    Key? key,
     required this.tabIndex,
     required this.navigatorKey,
     required this.navigatorBuilder,
     required this.fader,
     required this.isActive,
-  })  : assert(tabIndex >= 0),
-        super(key: key);
+  }) : assert(tabIndex >= 0);
 
   final int tabIndex;
   final GlobalKey<NavigatorState> navigatorKey;
