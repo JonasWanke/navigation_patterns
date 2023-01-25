@@ -1,5 +1,5 @@
 name: navigation_patterns
-description: '🗺 This package implements common reusable patterns for handling navigation in a complex app.'
+description: Common reusable patterns for handling navigation in a complex app
 version: 0.0.1
 homepage: https://github.com/JonasWanke/navigation_patterns
 
