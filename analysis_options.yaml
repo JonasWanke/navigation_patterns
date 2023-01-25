@@ -34,7 +34,6 @@ linter:
     comment_references: true
     conditional_uri_does_not_exist: true
     dangling_library_doc_comments: true
-    depend_on_referenced_packages: false
     directives_ordering: true
     discarded_futures: true
     enable_null_safety: true
@@ -83,11 +82,6 @@ linter:
 dart_code_metrics:
   rules:
     - always-remove-listener
-    - avoid-banned-imports:
-        entries:
-          - paths: ['.*']
-            deny: ["^(?:\\.\\./)+module\\.dart$"]
-            message: Don't import the `module.dart` of your own module.
     - avoid-border-all
     - avoid-cascade-after-if-null
     - avoid-collection-methods-with-unrelated-types
@@ -131,6 +125,3 @@ dart_code_metrics:
     - prefer-trailing-comma
     - provide-correct-intl-args
     - tag-name
-  rules-exclude:
-    - lib/**.g.dart
-    - lib/**.freezed.dart
