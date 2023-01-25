@@ -2,6 +2,7 @@ name: navigation_patterns
 description: Common reusable patterns for handling navigation in a complex app
 version: 0.0.1
 repository: https://github.com/JonasWanke/navigation_patterns
+publish_to: none
 
 environment:
   sdk: '>=2.19.0 <3.0.0'
