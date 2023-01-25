@@ -19,7 +19,7 @@ class BottomNavigationPattern extends StatefulWidget {
     required this.tabCount,
     required this.navigatorBuilder,
     required this.scaffoldBuilder,
-  })   : assert(tabCount > 0),
+  })  : assert(tabCount > 0),
         super(key: key);
 
   final int tabCount;
@@ -82,7 +82,7 @@ class BottomNavigationPatternState extends State<BottomNavigationPattern>
   Widget build(BuildContext context) {
     final body = Stack(
       fit: StackFit.expand,
-      children: <Widget>[
+      children: [
         for (var i = 0; i < widget.tabCount; i++)
           _TabContent(
             tabIndex: i,
@@ -129,7 +129,7 @@ class _TabContent extends StatefulWidget {
     required this.navigatorBuilder,
     required this.fader,
     required this.isActive,
-  })   : assert(tabIndex >= 0),
+  })  : assert(tabIndex >= 0),
         super(key: key);
 
   final int tabIndex;
@@ -149,10 +149,9 @@ class _TabContentState extends State<_TabContent> {
   Widget build(BuildContext context) {
     if (!widget.isActive) {
       widget.fader.reverse();
-      final child = _child ?? SizedBox();
-      if (widget.fader.isAnimating) {
-        return IgnorePointer(child: child);
-      }
+      final child = _child ?? const SizedBox();
+      if (widget.fader.isAnimating) return IgnorePointer(child: child);
+
       return Offstage(child: child);
     }
 
